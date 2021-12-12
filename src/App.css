@@ -173,6 +173,18 @@ sup{
 .profile-bar a{
   color:black;
 }
+.main-section-home{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* background: url("/src/bg.jpg")no-repeat; */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  color:#000;
+}
+.main-section-home p{
+  font-size:50px;
+  color: black;
+}
 
 /* footer */
 footer{
