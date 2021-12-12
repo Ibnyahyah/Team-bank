@@ -47,6 +47,20 @@ nav button{
 nav button a{
   color:#133F77;
 }
+.menu-icon{
+  display: none;
+}
+.fa-bars{
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 5px 8px;
+}
+.btn1{
+  display:block;
+}
+.btn2{
+  display:none;
+}
 /* login and sign up */
 .card{
   background-color:white;
@@ -124,6 +138,8 @@ nav button a{
   width:60px;
   height:60px;
   display: flex;
+  border: 1px solid #133F77;
+  border-radius: 50%;
 }
 .profile-img-box img{
   width:100%;
@@ -147,8 +163,15 @@ sup{
   color:white;
   margin-top: 20px;
 }
+.input-container-verification{
+  padding:1rem 0.2rem;
+}
 .verification input{
   width: 100%;
+  padding:0.7rem 0.2rem;
+}
+.profile-bar a{
+  color:black;
 }
 
 /* footer */
@@ -170,6 +193,59 @@ footer{
 }
 
 @media screen and (max-width:960px) {
+
+  .menu{
+    width:100%;
+    margin: auto;
+    margin-top:10px;
+    display: flex;
+    flex:row wrap;
+    justify-content: center;
+    position: absolute;
+    top:0;
+    left:0;
+  }
+  .item{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    position: absolute;
+    top:80px;
+    left:-100%;
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
+  .item.active{
+    background: #133F77;
+    padding-top:20px;
+    left:0;
+    opacity: 1;
+    transition: all 0.3s ease;
+    height:70vh;
+    z-index: 1;
+  }
+  .menu-icon{
+    display: block;
+    position:absolute;
+    top:0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  .fa-times{
+    font-size: 2rem;
+    color: #fff;
+    border: 1px solid #fff;
+    padding:5px 8px;
+    z-index: 2;
+  }
+  .btn1{
+    display:none;
+  }
+  .btn2{
+    display:block;
+  }
   .container{
       width:95%;
   }
@@ -185,4 +261,32 @@ footer{
       width: 40px;
       height: 40px;
   }
+  .login-sign-in{
+    width:90%;
+    margin:auto;
+  }
+  .input-container{
+    width:90%;
+    margin-bottom: 10px;
+  }
+  .input-container input{
+    width: 100%;
+    padding: 1rem;
+}
+.login-sign-in h1{
+  font-size:18px;
+}
+.footer{
+  display: flex;
+  flex-direction:row-reverse;
+  justify-content:space-between;
+  /* /* margin-top:10px; */
+  width: 100%;
+  /* text-align:center; */
+  font-size:12px;
+}
+.footer li{
+  display: block;
+  margin: 0 5px;
+}
 }

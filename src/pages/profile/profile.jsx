@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom'
 import LoginNavbar from '../../component/navbar/login-navbar'
 import ProfileEdit from '../../component/profile/profile-editor'
 import Verification from '../../component/profile/verification'
-import { Data } from './dummy-data'
+import { Data, DataUrl } from './dummy-data'
 
 export default function Profile(){
     return(
@@ -22,6 +23,20 @@ export default function Profile(){
                                 )
                             })}
                     </div>
+                </div>
+                <div className="card profile-bar">
+                    {DataUrl.map((data)=>{
+                        return(
+                            <div>
+                                <div className="row">
+                                    <div className="card">
+                                        <p><Link to={data.url}>{data.details}</Link></p>
+                                    </div>
+                                </div>
+                                <hr/>
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
         </>
