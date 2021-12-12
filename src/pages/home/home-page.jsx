@@ -1,6 +1,9 @@
 import Navbar from "../../component/navbar/navbar";
 
 export default function Home(){
+
+    const user = JSON.parse(localStorage.getItem("profile"));
+
     return(
         <>
         <div className="main-section-home">

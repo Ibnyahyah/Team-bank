@@ -14,7 +14,7 @@ export const signIn = (formData) => async (dispatch) => {
         if (data) {
             Swal.fire("User Logged in Succesfully");
             setTimeout(() => {
-              window.location.replace("/");
+              window.location.replace("/overview");
             }, 3000);
           }
         // window.location.replace("/")
@@ -41,7 +41,7 @@ export const signUp = (formData) => async (dispatch) => {
         if (data) {
             Swal.fire("User Logged in Succesfully");
             setTimeout(() => {
-              window.location.replace("/");
+              window.location.replace("/overview");
             }, 3000);
           }
         
