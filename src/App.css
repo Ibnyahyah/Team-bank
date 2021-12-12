@@ -280,13 +280,11 @@ footer{
   display: flex;
   flex-direction:row-reverse;
   justify-content:space-between;
-  /* /* margin-top:10px; */
-  width: 100%;
-  /* text-align:center; */
+  width: 90%;
   font-size:12px;
 }
 .footer li{
-  display: block;
+  display: inline;
   margin: 0 5px;
 }
 }
