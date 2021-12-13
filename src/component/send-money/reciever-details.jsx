@@ -36,7 +36,7 @@ export default function ReceiverDetail(props){
 
     const handleChange = (e) => {
         // e.preventDefault()
-        setFormData({ ...formData, [e.target.name]: e.target.value })
+        setFormData({ ...formData, [e.target.name]: parseInt(e.target.value) })
     } 
 
     return(
