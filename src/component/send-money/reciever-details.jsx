@@ -1,21 +1,64 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import React, { useState } from 'react'
+// import { Link } from "react-router-dom"
+import { useDispatch, useSelector } from 'react-redux'
+import { transferUsingAccountNumber } from '../../actions/transaction'
 
-export default function ReceiverDetail(){
+
+
+
+export default function ReceiverDetail(props){
+
+    const dispatch = useDispatch()
+
+
+    const user = JSON.parse(localStorage.getItem("profile"));
+
+
+    const { data } = props
+
+    const initialStateField = {
+    senderAccountNumber: user.user.accountNumber,
+    receiverAccountNumber: data.accountNumber,
+    transferAmount: '',
+    senderTransactionPin: ''
+}
+    // const history = useHistory();
+    const [formData, setFormData] = useState(initialStateField)
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        // setFormData({ ...formData, receiverAccountNumber: data.name })
+        // setFormData({ ...formData, senderAccountNumber: user.user.accountNumber })
+        // console.log(formData)
+        dispatch(transferUsingAccountNumber(formData))
+    }
+
+    const handleChange = (e) => {
+        // e.preventDefault()
+        setFormData({ ...formData, [e.target.name]: e.target.value })
+    } 
+
     return(
         <div className="container mt-2 display-f align-center justify-center verifer">
             <div className="card sending-card mt-5">
-            <Link to="/send" className="text-black">Back</Link>
-                    <h1 className="text-center text-blue">Confirm Transaction</h1>
                 <div className="mt-3 mb-2">
-                    <p className="font-4 font-lg text-center mb-1">#1000.00</p>
-                    <p className="font-3 font-md">Reciever Name</p>
-                    <p className="font-3 font-md">Receiver account number / username</p>
-                    <p className="font-3 font-md">Sender Name</p>
-                    <p className="font-3 font-md">Account Balance</p>
+                    <h3 className="font-4 font-md">Receiver's Name</h3>
+                    <p className="font-3 font-md">{data.name}</p>
+                    <h3 className="font-4 font-md">Receiver's account number</h3>
+                    <p className="font-3 font-md">{data.accountNumber}</p>
+                    <h3 className="font-4 font-md">Receiver's Username</h3>
+                    <p className="font-3 font-md">{data.userName}</p>
+                    <h3 className="font-4 font-md">Receiver's Email address</h3>
+                    <p className="font-3 font-md">{data.email}</p>
+
                 </div>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className="input-container">
-                        <input type="number" placeholder="Enter Your 4 digit Pin" required/>
+                        <input type="number" name="transferAmount" placeholder="Enter Amount to transfer" required onChange={handleChange}/>
+                    </div>
+                    <div className="input-container">
+                        <input type="number" name="senderTransactionPin" placeholder="Enter Your 4 digit Pin" required onChange={handleChange}/>
                     </div>
                     <button className="btn mt-1">Confirm</button>
                 </form>
