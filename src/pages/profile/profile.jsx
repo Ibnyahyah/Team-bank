@@ -5,6 +5,9 @@ import Verification from '../../component/profile/verification'
 import { Data, DataUrl } from './dummy-data'
 
 export default function Profile(){
+    
+    // const user = JSON.parse(localStorage.getItem("profile"));
+
     return(
         <>
             <LoginNavbar/>

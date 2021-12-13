@@ -10,20 +10,22 @@ class Navbar extends React.Component{
     }
     render(){
     return(
-        <div className="container nav-container">
-            <nav>
-                <header>Logo</header>
+        <div className="nav-container">
+            <nav className="container">
+                <header className="font-lg font-4">
+                    Team-Bracket
+                </header>
                 <div className="menu-icon" onClick={this.handleClick}>
                         <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}/>
                     </div>
                 <ul  className={this.state.clicked ? "item active" : "item"}>
-                    <li><Link to="/">About us</Link></li>
+                    <li><a href="#about">About us</a></li>
                     <li><Link to="/">Business</Link></li>
                     <li><Link to="/">Personal</Link></li>
                     <li><Link to="/">Help Desk</Link></li>
-                    <button className="btn2"><Link to="/login">Get Started</Link></button>
+                    <button className="btn2 btn"><Link to="/login">Get Started</Link></button>
                 </ul>
-                <button className="btn1"><Link to="/login">Get Started</Link></button>
+                <button className="btn1 btn"><Link to="/login">Get Started</Link></button>
             </nav>
         </div>
     )

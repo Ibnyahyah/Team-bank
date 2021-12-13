@@ -29,6 +29,12 @@ button{
   background: #133F77;
   padding:1.5rem 0rem;
 }
+.backdrop{
+  background: rgba(0,0,0,0.06);
+  position: fixed;
+  height:90vh;
+  top:0;
+}
 nav{
   display: flex;
   flex-direction:row;
@@ -45,11 +51,12 @@ a{
   text-decoration: none;
   color:white;
 }
-nav button{
-  padding:0.5rem;
-}
-nav button a{
+button a{
   color:#133F77;
+}
+button {
+  color:#133F77;
+  cursor:pointer;
 }
 .menu-icon{
   display: none;
@@ -72,7 +79,7 @@ nav button a{
   box-shadow: 2px 4px 4px rgba(0,0,0,0.06);
   padding: 1rem;
 }
-.login-sign-in{
+.login-sign-in,.sending-card{
   width:50%;
   margin:auto;
   margin-top:100px;
@@ -280,7 +287,7 @@ footer{
       width: 40px;
       height: 40px;
   }
-  .login-sign-in{
+  .login-sign-in,.sending-card{
     width:90%;
     margin:auto;
   }

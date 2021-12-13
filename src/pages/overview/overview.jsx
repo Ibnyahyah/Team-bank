@@ -1,8 +1,11 @@
+import {useState} from 'react';
 import LoginNavbar from "../../component/navbar/login-navbar";
+import SendMoney from '../../component/send-money/send-money';
 import Transaction from "../../component/transaction/transaction";
 
 export default function Overview(){
 
+    const [modal, setModal] = useState(false)
     const user = JSON.parse(localStorage.getItem("profile"));
 
     const redirect = () => {
@@ -18,6 +21,10 @@ export default function Overview(){
             <h2>Click this <button onClick={redirect}>Link </button> to go to Login Page</h2>
           </div></>
         )
+      }
+
+      function Sendhandler(){
+        setModal(true);
       }
 
     return(
@@ -43,10 +50,11 @@ export default function Overview(){
                     <div className="row">
                         <div className="col">
                             <button className="recieve">Recieve</button>
-                            <button className="send">send</button>
+                            <button className="send" onClick={Sendhandler}>send</button>
                         </div>
                     </div>
                 </div>
+                {modal ? <SendMoney/> : null}
             </div>
             <Transaction data={user.user.transactions}/>
         </>

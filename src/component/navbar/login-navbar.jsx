@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { LogOut } from '../button/logoutbtn';
 
 class LoginNavbar extends React.Component{
+
     state = {
         clicked: false
     }
@@ -10,9 +12,11 @@ class LoginNavbar extends React.Component{
     }
     render(){
     return(
-        <div className="container nav-container">
-            <nav>
-                <header>Logo</header>
+        <div className="nav-container">
+            <nav className="container"> 
+                <header className="font-lg font-4">
+                    Team-Bracket
+                </header>
                     <div className="menu-icon" onClick={this.handleClick}>
                         <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}/>
                     </div>
@@ -20,9 +24,9 @@ class LoginNavbar extends React.Component{
                     <li><Link to="/overview">Overview</Link></li>
                     <li><Link to="/profile">Profile</Link></li>
                     <li><Link to="/">Help Desk</Link></li>
-                    <button className="btn2">Log-out</button>
+                    <div className="btn2"><LogOut/></div>
                 </ul>
-                <button className="btn1">Log-out</button>
+                <div className="btn1"><LogOut/></div>
             </nav>
         </div>
     )

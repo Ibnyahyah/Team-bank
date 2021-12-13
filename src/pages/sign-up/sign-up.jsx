@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom"
-import Footer from "../../component/footer/footer"
 import Navbar from "../../component/navbar/navbar"
 import { useDispatch } from 'react-redux'
 import { signUp } from '../../actions/auth'
@@ -82,7 +81,6 @@ function SignUp(){
                     </form>
                 </div>
             </div>
-            <Footer/>
         </>
     )
 }
