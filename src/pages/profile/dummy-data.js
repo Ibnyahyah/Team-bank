@@ -9,7 +9,7 @@ export const Data = [
 ]
 export const DataUrl = [
     {
-        url:'/',
+        url:'/transactions',
         details:'Transaction Details'
     },
     {

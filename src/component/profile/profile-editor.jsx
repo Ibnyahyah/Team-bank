@@ -2,7 +2,7 @@ export default function ProfileEdit({data}){
     return(
         <>
             <div className="profile-edit">
-                <form>
+                <form className="gap-1">
                     <div>
                         username: @<input type="text" value={data.username}/>
                     </div>

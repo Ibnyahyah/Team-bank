@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom"
-import Navbar from "../../component/navbar/navbar"
-
 import { useDispatch } from 'react-redux'
 import { signIn } from '../../actions/auth'
 
@@ -33,31 +31,38 @@ function Login(){
 
     return(
         <>
-        <Navbar/>
-            <div class="container">
-                <div class="card login-sign-in" style={{marginBottom:'270px'}}>
-                    <h1>Welcome Back</h1>
-                    <form onSubmit={handleSubmit}>
-                        <div class="input-container">
-                            <label for="email">Email Address</label>
-                            <input type="email" placeholder="Email Address" name="email" required onChange={handleChange}/>
+            <main>
+                <div className="container loging-sign-up">
+                    <div className="row">
+                        <div className="col-6-lg welcome">
+                            <header>
+                                <h2>
+                                    Welcome back
+                                </h2>
+                            </header>
+                            <img src="./imgs/login-image.png" alt=""/>
                         </div>
-                        <div class="input-container">
-                            <label for="password">Password</label>
-                            <input type="password" placeholder="Enter Your Password" name="password" required onChange={handleChange}/>
-                        </div>
-                        <div class="row">
-                            <div class="login-btn">
-                                <button>Login</button>
+                        <div className="col-6-lg">
+                            <div className="form">
+                                <form onSubmit={handleSubmit}>
+                                    <input className="input-content" type="email" placeholder="Email Address" required name="email" onChange={handleChange}/><br/><br/>
+                                    <input className="input-content" type="password" placeholder="Password" required name="password" onChange={handleChange}/><br/><br/>
+                                    <button>Login</button>
+                                </form><br/><br/>
+                                <div className="text-center">
+                                    <a href="/" className="password">Forget Password?</a><br/><br/>
+                                    <p>Don't have an account? <Link to="/sign-up">Signup</Link></p>
+                                    <hr/>
+                                    <p>Or Login with socials</p>
+                                    <i className='bx bxl-instagram'></i>
+                                    <i className='bx bxl-facebook-square'></i>
+                                    <i className='bx bxl-gmail' ></i>
+                                </div>
                             </div>
-                            <div>
-                                <p><Link to="/">Forgotten password?</Link></p>
-                                <p><Link to="/sign-up">new Here? Sign-up</Link></p>
-                            </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
+            </main>
         </>
     )
 }

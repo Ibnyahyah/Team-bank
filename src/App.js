@@ -7,6 +7,8 @@ import Home from './pages/home/home-page';
 import SignUp from './pages/sign-up/sign-up';
 import Profile from './pages/profile/profile';
 import Transactions from './pages/transaction/transactions';
+import Sending from './pages/sending/sending';
+import ReceiverDetail from './component/send-money/reciever-details';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/sign-up" element={<SignUp/>}/>
         <Route path="/transactions" element={<Transactions/>}/>
+        <Route path="/send" element={<Sending/>}/>
+        <Route path="/verifer" element={<ReceiverDetail/>}/>
     </Routes>
     </BrowserRouter>
   );

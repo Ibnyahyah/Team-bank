@@ -12,7 +12,7 @@ export default function Verification({data}){
                                 </label>
                             </div>
                             <div>
-                                <button>Verify</button>
+                                <button className="btn">Verify</button>
                             </div>
                         </form>
                     </div>

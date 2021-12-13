@@ -24,23 +24,27 @@ export default function Home(){
             <div className="container">
                 <div className="row gap-2">
                     <div className="col-6-sm col-3-md">
-                        <div className="card">
-                            <p>Make Deposit</p>
+                        <div className="card text-center">
+                        <i className="fas fa-university fa-5x"></i>
+                            <p className="font-4 font-md mt-1">Make Deposit</p>
                         </div>
                     </div>
                     <div className="col-6-sm col-3-md">
-                        <div className="card">
-                            <p>Withdraw</p>
+                        <div className="card text-center">
+                        <i className="fas fa-piggy-bank fa-5x"></i>
+                            <p className="font-4 font-md mt-1">Withdraw</p>
                         </div>
                     </div>
                     <div className="col-6-sm col-3-md">
-                        <div className="card">
-                            <p>Transfer</p>
+                        <div className="card text-center">
+                            <i className="fas fa-exchange-alt fa-5x"></i>
+                            <p className="font-4 font-md mt-1">Transfer</p>
                         </div>
                     </div>
                     <div className="col-6-sm col-3-md">
-                        <div className="card">
-                            <p>Online Payment</p>
+                        <div className="card text-center">
+                        <i className="fas fa-shopping-cart fa-5x"></i>
+                            <p className="font-4 font-md mt-1">Online Payment</p>
                         </div>
                     </div>
                 </div>
@@ -48,8 +52,10 @@ export default function Home(){
         </div>
         <div className="container" id="about">
             <div className="row mt-5 mb-5">
-                <div className="col-6-sm col-6-md">
-
+                <div className="col-6-sm col-6-md mt-3">
+                    <div style={{width:'90%',margin:'auto', height:'300px'}}>
+                        <img style={{width:'100%', height:'100%', objectFit:'contain'}} src="./imgs/happy-team_bank.jpg" alt="Team_bank"/>
+                    </div>
                 </div>
                 <div className="col-6-sm col-6-md">
                     <h1>About Us</h1>

@@ -15,7 +15,7 @@ export default function Profile(){
                 <div class="card profile-card">
                     <div class="profile">
                         <div class="profile-img-box">
-                            <img src="./logo192.png" alt="Team_bracket"/><sup>Verfied</sup>
+                            <img src="./logo192.jpeg" alt="Team_bracket"/><sup>Verfied</sup>
                         </div>
                         {Data.map((data)=>{
                             return(

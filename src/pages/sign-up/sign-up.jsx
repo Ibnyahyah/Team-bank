@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom"
-import Navbar from "../../component/navbar/navbar"
 import { useDispatch } from 'react-redux'
 import { signUp } from '../../actions/auth'
 
@@ -41,46 +40,45 @@ function SignUp(){
 
     return(
         <>
-            <Navbar/>
-            <div className="container">
-                <div className="card login-sign-in">
-                    <h1>Welcome To Team-Bracket Bank</h1>
-                    <form onSubmit={handleSubmit}>
-                        <div className="input-container">
-                            <label for="first-name">First Name</label>
-                            <input type="text" placeholder="First Name" name="firstName" required onChange={handleChange} />
+            <main>
+                <div className="container loging-sign-up">
+                    <div className="row">
+                        <div className="col-6-lg welcome">
+                            <header>
+                                <h2>
+                                    Free to join
+                                </h2>
+                            </header>
+                            <img src="./imgs/signup-image.png" alt=""/>
                         </div>
-                        <div className="input-container">
-                            <label for="last-name">Last Name</label>
-                            <input type="text" placeholder="Last Name" name="lastName" required onChange={handleChange} />
-                        </div>
-                        <div className="input-container">
-                            <label for="phone">Username</label>
-                            <input type="text" placeholder="Username" name="userName" required onChange={handleChange} />
-                        </div>
-                        <div className="input-container">
-                            <label for="phone">Email Address</label>
-                            <input type="email" placeholder="Email Address" name="email" required onChange={handleChange} />
-                        </div>
-                        <div className="input-container">
-                            <label for="password">Password</label>
-                            <input type="password" placeholder="Enter Your Password" name="password" required onChange={handleChange} />
-                        </div>
-                        <div className="input-container">
-                            <label for="c-password">Comfirm Password</label>
-                            <input type="password" placeholder="Re-Type Your Password" name="confirmPassword" required onChange={handleChange} />
-                        </div>
-                        <div className="row">
-                            <div className="login-btn">
-                                <button type="submit">Sign-up</button>
+                        <div className="col-6-lg">
+                            <div className="form">
+                                <form onSubmit={handleSubmit}>
+
+                                    <input className="input-name" type="text" required name="firstName" placeholder="First Name" onChange={handleChange}/>
+                                    <input className="input-name" type="text" required name="lastName" placeholder="Last Name" onChange={handleChange}/><br/><br/>
+                                    <input className="input-content" type="text" name="userName" placeholder="Username" required onChange={handleChange}/><br/><br/>
+                                    <input className="input-content" type="email" name="email" placeholder="Email Address" required onChange={handleChange}/><br/><br/>
+                                    <input className="input-content" type="password" name="password" placeholder="Password" required onChange={handleChange}/><br/><br/>
+                                    <input className="input-content" type="password" name="confirmPassword" placeholder="Confirm Password" required onChange={handleChange}/><br/><br/>
+                                    <button>Sign-up</button><br/><br/>
+                                    </form>
+                                    <div className="display-f  justify-between">
+                                        <p>Already have an account? <Link to="/login">Login</Link></p>
+                                        <a href="/" className="password" style={{marginLeft: '65px'}}>Forget Password?</a><br/><br/>
+                                    </div>
+                                    <hr/>
+                                    <div className="display-f justify-between">
+                                        <p>Or Login with socials</p>
+                                        <i className='bx bxl-instagram'></i>
+                                        <i className='bx bxl-facebook-square'></i>
+                                        <i className='bx bxl-gmail'></i>
+                                    </div>
                             </div>
-                            <div>
-                                <p><Link to="/login">Already have an account? Login</Link></p>
-                            </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
+            </main>
         </>
     )
 }
