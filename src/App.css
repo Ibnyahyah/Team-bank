@@ -396,6 +396,9 @@ main {
 main .container{
   width:100% !important;
 }
+.loging-sign-up header {
+  margin-left: 20px;
+}
 .footer{
   display: flex;
   flex-direction:row-reverse;

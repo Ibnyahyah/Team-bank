@@ -46,7 +46,7 @@ function SignUp(){
                         <div className="col-6-sm col-5-md col-6-lg welcome">
                             <header>
                                 <h2>
-                                    Free to join
+                                    Free to join Team-Bank
                                 </h2>
                             </header>
                             <img src="./imgs/signup-image.png" alt=""/>

@@ -37,7 +37,7 @@ function Login(){
                         <div className="col-6-sm col-6-lg welcome">
                             <header>
                                 <h2>
-                                    Welcome back
+                                    Welcome back to Team-Bank
                                 </h2>
                             </header>
                             <img src="./imgs/login-image.png" alt=""/>
