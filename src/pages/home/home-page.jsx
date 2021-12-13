@@ -21,7 +21,7 @@ export default function Home(){
             </div>
         </div>
         <div style={{padding:'20px', background:'#133f77', color:'#133f77'}}>
-            <div className="container">
+            <div className="container desc">
                 <div className="row gap-2">
                     <div className="col-6-sm col-3-md">
                         <div className="card text-center">
