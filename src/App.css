@@ -255,6 +255,10 @@ sup{
 .input-container input{
   width:99%;
   padding:1rem 0.2rem;
+  border-radius:4px ;
+  background: #f6f0ed;
+  outline: none;
+  border: none;
 }
 .verification input{
   width: 100%;
@@ -277,6 +281,9 @@ sup{
 .main-section-home p{
   font-size:50px;
   width: 50%;
+}
+.verifer{
+  height:70vh;
 }
 
 /* footer */
@@ -392,5 +399,8 @@ footer{
 .footer li{
   display: inline;
   margin: 0 5px;
+}
+.verifer{
+  height:100vh;
 }
 }

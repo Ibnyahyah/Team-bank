@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function ReceiverDetail(){
     return(
-        <div className="container">
+        <div className="container mt-2 display-f align-center justify-center verifer">
             <div className="card sending-card mt-5">
             <Link to="/send" className="text-black">Back</Link>
                     <h1 className="text-center text-blue">Confirm Transaction</h1>
@@ -15,9 +15,9 @@ export default function ReceiverDetail(){
                 </div>
                 <form>
                     <div className="input-container">
-                        <input type="number" required/>
+                        <input type="number" placeholder="Enter Your 4 digit Pin" required/>
                     </div>
-                    <button className="btn">Confirm</button>
+                    <button className="btn mt-1">Confirm</button>
                 </form>
             </div>
         </div>

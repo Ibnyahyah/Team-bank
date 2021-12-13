@@ -5,7 +5,7 @@ export default function Sending(){
     return(
         <>
         <LoginNavbar/>
-            <div>
+            <div className="mt-2 display-f align-center justify-center" style={{height:'70vh'}}>
                 <SendMoney/>
             </div>
         </>
