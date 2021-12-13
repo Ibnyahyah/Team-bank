@@ -34,7 +34,7 @@ function Login(){
             <main>
                 <div className="container loging-sign-up">
                     <div className="row">
-                        <div className="col-6-lg welcome">
+                        <div className="col-6-sm col-6-lg welcome">
                             <header>
                                 <h2>
                                     Welcome back
@@ -42,7 +42,7 @@ function Login(){
                             </header>
                             <img src="./imgs/login-image.png" alt=""/>
                         </div>
-                        <div className="col-6-lg">
+                        <div className="col-6-sm col-6-lg">
                             <div className="form">
                                 <form onSubmit={handleSubmit}>
                                     <input className="input-content" type="email" placeholder="Email Address" required name="email" onChange={handleChange}/><br/><br/>
@@ -51,9 +51,9 @@ function Login(){
                                 </form><br/><br/>
                                 <div className="text-center">
                                     <a href="/" className="password">Forget Password?</a><br/><br/>
-                                    <p>Don't have an account? <Link to="/sign-up">Signup</Link></p>
+                                    <p>Don't have an account? <Link to="/sign-up">Sign-up</Link></p>
                                     <hr/>
-                                    <p>Or Login with socials</p>
+                                    <p className="mb-2">Or Login with socials</p>
                                     <i className='bx bxl-instagram'></i>
                                     <i className='bx bxl-facebook-square'></i>
                                     <i className='bx bxl-gmail' ></i>

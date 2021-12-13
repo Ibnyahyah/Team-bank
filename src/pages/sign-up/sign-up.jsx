@@ -43,7 +43,7 @@ function SignUp(){
             <main>
                 <div className="container loging-sign-up">
                     <div className="row">
-                        <div className="col-6-lg welcome">
+                        <div className="col-6-sm col-5-md col-6-lg welcome">
                             <header>
                                 <h2>
                                     Free to join
@@ -51,7 +51,7 @@ function SignUp(){
                             </header>
                             <img src="./imgs/signup-image.png" alt=""/>
                         </div>
-                        <div className="col-6-lg">
+                        <div className="col-6-sm col-6-lg">
                             <div className="form">
                                 <form onSubmit={handleSubmit}>
 

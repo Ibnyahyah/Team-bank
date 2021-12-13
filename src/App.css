@@ -373,7 +373,7 @@ footer{
       width: 40px;
       height: 40px;
   }
-  .login-sign-in,.sending-card{
+.sending-card{
     width:90%;
     margin:auto;
   }
@@ -388,6 +388,13 @@ footer{
 .main-section-home p{
   font-size:25px;
   width: 100%;
+}
+main {
+  width:100%;
+  margin-left: -20px;
+}
+main .container{
+  width:100% !important;
 }
 .footer{
   display: flex;
