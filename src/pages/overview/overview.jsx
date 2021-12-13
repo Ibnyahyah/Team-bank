@@ -30,15 +30,15 @@ export default function Overview(){
             <div className="container">
                 <div className="card mt-3 mb-2">
                     <div className="row">
-                        <div className="col">
+                        <div className="col mb-1">
                             <p>Account Number</p>
                             <p><b>{user.user.accountNumber}</b></p>
                         </div>
-                        <div className="col">
+                        <div className="col mb-1">
                             <p>Account Username</p>
                             <p><b>{user.user.userName}</b></p>
                         </div>
-                        <div className="col">
+                        <div className="col mb-1">
                             <p>Account Balance</p>
                             <p><b>#{user.user.accountBalance}</b></p>
                         </div>
@@ -46,7 +46,7 @@ export default function Overview(){
                     <hr/>
                     <div className="row">
                         <div className="col">
-                            <button className="recieve">Recieve</button>
+                            {/* <button className="recieve">Recieve</button> */}
                             <button className="send"><Link to="/send" className="text-white">send</Link></button>
                         </div>
                     </div>
