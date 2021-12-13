@@ -19,6 +19,10 @@ hr{
   margin:10px 5px;
   color:gray;
 }
+button{
+  padding:0.5rem;
+  border:none;
+}
 .nav-container, footer{
   width:100%;
   margin: auto;
@@ -175,15 +179,18 @@ sup{
 }
 .main-section-home{
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* background: url("/src/bg.jpg")no-repeat; */
+  background: url("/src/bg.jpg")no-repeat;
   background-size: cover;
   background-position: center;
   min-height: 100vh;
-  color:#000;
+  color: white;
+}
+.main-section-home h1{
+  margin-top:200px;
 }
 .main-section-home p{
   font-size:50px;
-  color: black;
+  width: 50%;
 }
 
 /* footer */
