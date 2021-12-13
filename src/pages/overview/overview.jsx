@@ -52,7 +52,7 @@ export default function Overview(){
                     </div>
                 </div>
             </div>
-            <Transaction data={user.user.transactions}/>
+            <Transaction transData={user.user.transactions}/>
         </>
     )
 }
