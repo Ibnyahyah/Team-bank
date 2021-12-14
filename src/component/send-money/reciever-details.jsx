@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { transferUsingAccountNumber } from '../../actions/transaction'
 
-
+import Swal from 'sweetalert2'
 
 
 export default function ReceiverDetail(props){
@@ -28,9 +28,22 @@ export default function ReceiverDetail(props){
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        // setFormData({ ...formData, receiverAccountNumber: data.name })
-        // setFormData({ ...formData, senderAccountNumber: user.user.accountNumber })
-        // console.log(formData)
+        if(formData.senderAccountNumber === formData.receiverAccountNumber) {
+            let timerInterval;
+            Swal.fire({
+                title: "Oops!!!",
+                html: "You can not make a transfer to your account",
+                timer: 4000,
+                didOpen: () => {
+                  timerInterval = setInterval(() => {
+                  }, 100);
+                },
+                willClose: () => {
+                  clearInterval(timerInterval);
+                },
+              });
+              return false
+        }
         dispatch(transferUsingAccountNumber(formData))
     }
 
@@ -38,6 +51,8 @@ export default function ReceiverDetail(props){
         // e.preventDefault()
         setFormData({ ...formData, [e.target.name]: parseInt(e.target.value) })
     } 
+
+   
 
     return(
         <div className="verifer">

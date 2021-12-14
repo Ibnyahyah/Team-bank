@@ -21,3 +21,5 @@ export const confirmAccountUsingAccountNumber = async (accountNumber) => await A
 export const transferUsingEmail = async (formData) => await API.post('/api/v1/transfer-email', formData)
 export const transferUsingUserName = async (formData) => await API.post('/api/v1/transfer-userName', formData)
 export const transferUsingAccountNumber = async (formData) => await API.post('/api/v1/transfer-accountNumber', formData)
+
+export const getUserById = async (id) => await API.get(`/api/v1/auth/users/${id}`)

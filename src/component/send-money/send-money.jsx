@@ -11,9 +11,8 @@ export default function SendMoney(){
     const user = JSON.parse(localStorage.getItem("profile"));
 
     const receiverAccount = useSelector((state) => state.transaction);
-    console.log(receiverAccount.transactionData)
 
-    if(!(user.user)) window.location.replace("/login")
+    if(!user) window.location.replace("/login")
 
     const dispatch = useDispatch()
 
@@ -29,7 +28,6 @@ export default function SendMoney(){
         if(accountType === "email") {
         dispatch(confirmAccountUsingEmail(formData))
         }
-
         if(accountType === "userName") {
         dispatch(confirmAccountUsingUserName(formData))
         }
@@ -37,6 +35,12 @@ export default function SendMoney(){
         if(accountType === "accountNumber") {
         dispatch(confirmAccountUsingAccountNumber(formData))
         }
+    }
+
+    const handleClear = (e) => {
+        e.preventDefault()
+        setFormData("")
+        receiverAccount.transactionData = null
     }
 
 
@@ -60,31 +64,33 @@ export default function SendMoney(){
                         {accountType === "userName" ? 
                             <div className="input-container">
                                 <h4>Username</h4>
-                                <input placeholder="Enter Reciever's Username" required onChange={(e) =>
+                                <input value={formData} placeholder="Enter Reciever's Username" required onChange={(e) =>
                           setFormData(e.target.value)
                         }/>
                             </div> 
                         : accountType === "accountNumber" ?  
                             <div className="input-container">
                                 <h4>Account Number</h4>
-                                <input placeholder="Enter Reciever's Account Number" required onChange={(e) =>
-                          setFormData(e.target.value)
+                                <input value={formData} placeholder="Enter Reciever's Account Number" required onChange={(e) =>
+                          setFormData(parseInt(e.target.value))
                         }/>
                             </div> 
                         :
                             <div className="input-container">
                                 <h4>Email Address</h4>
-                                <input placeholder="Enter Reciever's Email" required onChange={(e) =>
-                          setFormData(e.target.value)
+                                <input value={formData} placeholder="Enter Reciever's Email" required onChange={(e) =>
+                          setFormData(e.target.value.toLocaleLowerCase())
                         }/>
                             </div> 
                         }
-                        <button className="mt-1">Continue</button>
+                        {receiverAccount.transactionData ? "" : <button className="mt-1">Continue</button>}
+                        
                     </form>
 
                     {!receiverAccount.transactionData ? ""
                     :
-                        <ReceiverDetail data={receiverAccount.transactionData} />
+                        <><ReceiverDetail data={receiverAccount.transactionData} /><button className="btn mt-1" onClick={handleClear}>Clear</button></>
+                        
                     }
                 </div>
             </div>

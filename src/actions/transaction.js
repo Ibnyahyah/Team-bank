@@ -1,4 +1,4 @@
-import { CONFIRM_RECEIVER_ACCOUNT } from "../constants/actionTypes";
+import { CONFIRM_RECEIVER_ACCOUNT, SUCCESSFUL_TRANSFER } from "../constants/actionTypes";
 import * as api from "../api";
 import Swal from "sweetalert2";
 
@@ -7,7 +7,7 @@ export const confirmAccountUsingEmail = (formData) => async (dispatch) => {
     Swal.showLoading();
 
     const { data } = await api.confirmAccountUsingEmail(formData);
-    let responseData = data;
+    let responseData = data.data;
 
     dispatch({ type: CONFIRM_RECEIVER_ACCOUNT, data: responseData });
 
@@ -99,7 +99,7 @@ export const confirmAccountUsingAccountNumber =
     try {
       Swal.showLoading();
 
-      const { data } = await api.confirmAccountUsingEmail(formData);
+      const { data } = await api.confirmAccountUsingAccountNumber(formData);
       let responseData = data.data;
 
       dispatch({ type: CONFIRM_RECEIVER_ACCOUNT, data: responseData });
@@ -141,23 +141,29 @@ export const confirmAccountUsingAccountNumber =
     }
   };
 
-  export const transferUsingAccountNumber = (formData) => async (dispatch) => {
+export const transferUsingAccountNumber = (formData) => async (dispatch) => {
     try {
       Swal.showLoading();
+
+      const user = JSON.parse(localStorage.getItem("profile"));
+      
   
       const { data } = await api.transferUsingAccountNumber(formData);
-      let responseData = data;
+
+      const response = await api.getUserById(user.user._id)
+      const userFetched = response.data.data
   
-      dispatch({ type: CONFIRM_RECEIVER_ACCOUNT, data: responseData });
-  
+      dispatch({ type: SUCCESSFUL_TRANSFER, user: userFetched });
+      // console.log(data)
+      // dispatch({ type: CONFIRM_RECEIVER_ACCOUNT, user: userFetched });
       // history.push('/')
-      if (data) {
+      if (response) {
   
         let timerInterval;
         Swal.fire({
           title: "Success!",
           html: `${data.message}`,
-          timer: 2000,
+          timer: 80000,
           didOpen: () => {
             timerInterval = setInterval(() => {
             }, 100);
@@ -169,7 +175,7 @@ export const confirmAccountUsingAccountNumber =
       }
       setTimeout(() => {
         window.location.replace("/overview")
-      }, 3000)
+      }, 10000)
     } catch (error) {
       if (error) {
         let timerInterval;
@@ -188,4 +194,4 @@ export const confirmAccountUsingAccountNumber =
       }
       console.log(error);
     }
-  };
+};

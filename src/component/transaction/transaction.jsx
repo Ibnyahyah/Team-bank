@@ -2,16 +2,19 @@
 
 export default function Transaction({transData}){
     let datas = Array.from(transData);
-    // if(data.length > 1 ) {
-    //     <div className="container">
-    //         <hr/>
-    //         <div>
-    //             <h3>Recent Transaction</h3>
-    //             <br/>
-    //             <p>No Transaction</p>
-    //         </div>
-    //     </div>
-    // }
+    
+    if(!datas) {
+        return(
+        <div className="container">
+            <hr/>
+            <div>
+                <h3>Recent Transaction</h3>
+                <br/>
+                <p>No Transaction</p>
+            </div>
+        </div>
+        )
+    }
     // console.log(datas)
 
     return(
