@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { LogOut } from '../button/logoutbtn';
+import MonoConnect from '../button/mono-connect';
 
 class LoginNavbar extends React.Component{
 
@@ -24,8 +25,10 @@ class LoginNavbar extends React.Component{
                     <li><Link to="/overview">Overview</Link></li>
                     <li><Link to="/profile">Profile</Link></li>
                     <li><Link to="/">Help Desk</Link></li>
+                    <Link to="/mono-connect" class="btn btn2">Mono Connect</Link>
                     <div className="btn2"><LogOut/></div>
                 </ul>
+                <Link to="/mono-connect" class="btn btn1">Mono Connect</Link>
                 <div className="btn1"><LogOut/></div>
             </nav>
         </div>

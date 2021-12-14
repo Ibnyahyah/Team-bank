@@ -9,6 +9,7 @@ import Profile from './pages/profile/profile';
 import Transactions from './pages/transaction/transactions';
 import Sending from './pages/sending/sending';
 import ReceiverDetail from './component/send-money/reciever-details';
+import ConnectMono from './component/button/mono-connect';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/transactions" element={<Transactions/>}/>
         <Route path="/send" element={<Sending/>}/>
         <Route path="/verifer" element={<ReceiverDetail/>}/>
+        <Route path="/mono-connect" element={<ConnectMono/>}/>
     </Routes>
     </BrowserRouter>
   );
