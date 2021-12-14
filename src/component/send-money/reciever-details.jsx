@@ -40,8 +40,8 @@ export default function ReceiverDetail(props){
     } 
 
     return(
-        <div className="mt-2 display-f align-center justify-center verifer">
-            <div className="card sending-card mt-5">
+        <div className="verifer">
+            <div className="mt-1">
                 <div className="mt-3 mb-2">
                     <h3 className="font-4 font-md">Receiver's Name :</h3>
                     <p className="font-2 font-md text-blue mt-1">{data.name}</p>
@@ -54,10 +54,10 @@ export default function ReceiverDetail(props){
 
                 </div>
                 <form onSubmit={handleSubmit}>
-                    <div className="input-container">
+                    <div className="input-container mb-1">
                         <input type="number" name="transferAmount" placeholder="Enter Amount to transfer" required onChange={handleChange}/>
                     </div>
-                    <div className="input-container">
+                    <div className="input-container mb-1">
                         <input type="number" name="senderTransactionPin" placeholder="Enter Your 4 digit Pin" required onChange={handleChange}/>
                     </div>
                     <button className="btn mt-1">Confirm</button>

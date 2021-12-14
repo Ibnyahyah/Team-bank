@@ -1,7 +1,7 @@
 // import { Data } from "./dummy-trans";
 
 export default function Transaction({transData}){
-    // const { data } = props
+    let datas = Array.from(transData);
     // if(data.length > 1 ) {
     //     <div className="container">
     //         <hr/>
@@ -12,7 +12,7 @@ export default function Transaction({transData}){
     //         </div>
     //     </div>
     // }
-    // console.log(transData)
+    // console.log(datas)
 
     return(
         <div className="container">
@@ -21,7 +21,7 @@ export default function Transaction({transData}){
                 <h3>Recent Transaction</h3>
             </div>
             <div>
-                {transData.map((data, index)=>{
+                {datas.map((data, index)=>{
                     return(
                         <div className="card mt-1" key={index}>
                             <div>
@@ -32,7 +32,7 @@ export default function Transaction({transData}){
                                     <div className="trans-details ml-1">
                                         <p>{data.transactionId}</p>
                                         <div className="row">
-                                            <p>{(new Date(data.updatedAt).toDateString())}</p>
+                                            <p>{data.updatedAt}</p>
                                             <p className="font-4">#{data.transactionAmount}.00</p>
                                         </div>
                                     </div>
