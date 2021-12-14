@@ -24,8 +24,7 @@ export default function Transaction({transData}){
                 <h3>Recent Transaction</h3>
             </div>
             <div>
-                {datas.map((data, index)=>{
-                    return(
+                {datas.map((data, index)=>(
                         <div className="card mt-1" key={index}>
                             <div>
                                 <div className="tr-row">
@@ -43,8 +42,7 @@ export default function Transaction({transData}){
                                 <hr/>
                             </div>
                         </div>
-                    )
-                    })}
+                    ))}
             </div>
         </div>
     )
