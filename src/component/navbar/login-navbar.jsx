@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { LogOut } from '../button/logoutbtn';
-import MonoConnect from '../button/mono-connect';
 
 class LoginNavbar extends React.Component{
 
